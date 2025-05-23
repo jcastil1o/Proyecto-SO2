@@ -1,0 +1,19 @@
+<domain type='kvm'>
+  <name>{{NAME}}</name>
+  <memory unit='KiB'>{{MEMORY}}</memory>
+  <vcpu placement='static'>{{VCPU}}</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc'>hvm</type>
+  </os>
+  <devices>
+    <disk type='file' device='disk'>
+      <driver name='qemu' type='qcow2'/>
+      <source file=r'/home/jonac/Descargas/Fedora-Cloud-Base-Generic-42-1.1.x86_64.qcow2'/>
+      <target dev='vda' bus='virtio'/>
+    </disk>
+    <interface type='network'>
+      <source network='default'/>
+    </interface>
+    <graphics type='vnc' port='-1'/>
+  </devices>
+</domain>
